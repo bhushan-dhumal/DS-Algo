@@ -19,7 +19,7 @@ void merge_sort(int a[], int N)
 		}
 
 		merge_sort(left,n1);
-		merge_sort1right,n2);
+		merge_sort(right,n2);
 
 		i=j=k=0;
 		while(i< n1 && j < n2)
