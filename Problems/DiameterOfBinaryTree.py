@@ -27,9 +27,9 @@ Let's calculate the depth of a node in the usual way: max(depth of node.left, de
 
 Complexity Analysis
 
-Time Complexity: O(N)O(N). We visit every node once.
+Time Complexity: O(N). We visit every node once.
 
-Space Complexity: O(N)O(N), the size of our implicit call stack during our depth-first search.
+Space Complexity: O(N), the size of our implicit call stack during our depth-first search.
 '''
 class Solution(object):
     def diameterOfBinaryTree(self, root):
