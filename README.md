@@ -1,3 +1,5 @@
-# DataStructureAlgo
-Data Structures and Algorithm
-Interview Experiences
+# DataStructure and Algorithms
+Data Structures and Algorithms
+
+Interview Experience
+
