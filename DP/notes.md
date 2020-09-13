@@ -18,17 +18,37 @@
 1. Unbounded Knapsack( can be solved by DP approch)
 
 ## 0-1 Knapsack
-
+Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
 ### Recursive
-`
-int knapsack(int wt[], int val[], int W, int n)
-{
-if(n == 0 || W == 0)
-  return 0;
-}
-`
+``` C++
+#include <bits/stdc++.h> 
+using namespace std; 
 
-## Common Problems related 0-1 Knampsack
+int knapSack(int wt[], int val[], int W, int n) 
+{ 
+	if (n == 0 || W == 0) 
+		return 0; 
+
+	if (wt[n-1] <= W) 
+		return max(val[n-1] + knapSack(wt, val, W - wt[n-1], n - 1), 
+			knapSack(wt, val,W, n - 1)); 
+	else
+	    return knapSack(wt, val, W, n - 1); 
+} 
+
+// Driver code 
+int main() 
+{ 
+	int val[] = { 60, 100, 120 }; 
+	int wt[] = { 10, 20, 30 }; 
+	int W = 50; 
+	int n = sizeof(val) / sizeof(val[0]); 
+	cout << knapSack(wt, val,W, n); 
+	return 0; 
+} 
+```
+
+## Common Problems related 0-1 Knapsack
 1. Subset Sum
 1. Equal Sum Partition
 1. Count of Subset Sum
