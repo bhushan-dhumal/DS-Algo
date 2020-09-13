@@ -50,16 +50,32 @@ int knapSack(int wt[], int val[], int W, int n)
 ```
 ### Memoization
 ``` C++
-int knapSack(int wt[], int val[], int W, int n) 
+int knapSackRec(int wt[], int val[],int W, int n, int** dp) 
 { 
 	if (n == 0 || W == 0) 
 		return 0; 
 
 	if (wt[n-1] <= W) 
-		return max(val[n-1] + knapSack(wt, val, W - wt[n-1], n - 1), 
-			knapSack(wt, val,W, n - 1)); 
+		dp[n][W] = max(val[n-1] + knapSackRec(wt, val, W - wt[n-1], n - 1,dp), 
+			knapSackRec(wt, val,W, n - 1,dp)); 
 	else
-	    return knapSack(wt, val, W, n - 1); 
+	    dp[n][W] = knapSackRec(wt, val, W, n - 1,dp); 
+	return dp[n][W];
+} 
+  
+int knapSack(int wt[], int val[],int W, int n) 
+{ 
+    int** dp; 
+    dp = new int*[n+1]; 
+  
+    for (int i = 0; i < n+1; i++) 
+        dp[i] = new int[W + 1]; 
+  
+    for (int i = 0; i < n+1; i++)
+        for(int j = 0; j< W+1;j++)
+            dp[i][j] = -1;
+  
+    return knapSackRec(wt, val,W, n, dp); 
 } 
 ```
 
