@@ -1,0 +1,39 @@
+leetcode link - https://leetcode.com/problems/teemo-attacking/
+level - Medium
+
+c++
+-----
+Own approch:
+iterate each element and calculate next which will be last element till ashes will be in poisining state
+if element is greater than previous last element then ashes is not in poising state and we can easily calculate next position plus res can be increased by duration.
+else we need to find new duration to add in res which will be current last i.e next minus previous last i.e prev so duration that need to be added in res will be next - prev
+
+class Solution {
+public:
+    int findPoisonedDuration(vector<int>& timeSeries, int duration,int res =0) {
+        int next = INT_MIN,prev;
+        for(auto e : timeSeries)
+        {
+            prev = next;
+            next = e+duration-1;
+            res+= (e>prev) ? duration : (next-prev);
+        }
+        return res;
+    }
+};
+
+Better approch:
+consider only the interval between two attacks. 
+Ashe spends in a poisoned condition the whole time interval if this interval is shorter than the poisoning time duration duration, and duration otherwise.
+
+class Solution {
+public:
+    int findPoisonedDuration(vector<int>& timeSeries, int duration) {
+        int n = timeSeries.size();
+        if(n == 0 || duration == 0) return 0;
+        int total = 0;
+        for(int i =1;i<n;i++)
+            total+=min(duration,timeSeries[i]-timeSeries[i-1]);
+        return total+duration;
+    }
+};
