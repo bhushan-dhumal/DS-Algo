@@ -42,10 +42,16 @@ int knapSack(int wt[], int val[], int W, int n)
 		return 0; 
 
 	if (wt[n-1] <= W) 
+	{
+	// you have choice to include item in knapsack(bag)
 		return max(val[n-1] + knapSack(wt, val, W - wt[n-1], n - 1), 
 			knapSack(wt, val,W, n - 1)); 
+	}
 	else
-	    return knapSack(wt, val, W, n - 1); 
+	{
+	// you do not have choice to include item in knapsack(bag)
+	    return knapSack(wt, val, W, n - 1);
+	}
 } 
 ```
 ### DP(Memoization)
@@ -55,12 +61,18 @@ int knapSackRec(int wt[], int val[],int W, int n, int** dp)
 	if (n == 0 || W == 0) 
 		return 0; 
 
-	if (wt[n-1] <= W) 
+	if (wt[n-1] <= W)
+	{
+	// you have choice to include item in knapsack(bag)
 		dp[n][W] = max(val[n-1] + knapSackRec(wt, val, W - wt[n-1], n - 1,dp), 
-			knapSackRec(wt, val,W, n - 1,dp)); 
-	else
+			knapSackRec(wt, val,W, n - 1,dp));
+	}
+	else if(wt[n-1] > W)
+	{
+	// you do not have choice to include item in knapsack(bag)
 	    dp[n][W] = knapSackRec(wt, val, W, n - 1,dp); 
 	return dp[n][W];
+	}
 } 
   
 int knapSack(int wt[], int val[],int W, int n) 
