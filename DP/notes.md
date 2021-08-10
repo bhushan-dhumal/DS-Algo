@@ -48,7 +48,7 @@ int knapSack(int wt[], int val[], int W, int n)
 	    return knapSack(wt, val, W, n - 1); 
 } 
 ```
-### Memoization
+### DP(Memoization)
 ``` C++
 int knapSackRec(int wt[], int val[],int W, int n, int** dp) 
 { 
@@ -79,7 +79,7 @@ int knapSack(int wt[], int val[],int W, int n)
 } 
 ```
 
-### DP(Top-Down)
+### DP(Tabular)
 ``` C++
 int knapSack(int wt[], int val[],int W, int n) 
 { 
