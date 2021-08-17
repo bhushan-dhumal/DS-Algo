@@ -139,4 +139,51 @@ Youtueb Video Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
 3. Code Variation
    1. Initialization
    2. Code
+``` c++
+class Solution{   
+public:
+    bool isSubsetSum(int N, int arr[], int sum){
+        bool dp[N+1][sum+1];
+        
+        // initialization
+        // If sum is 0, then answer is true
+        for(int i = 0; i < N+1; i++)
+            dp[i][0] = true;
+        // If sum is not 0 and set is empty,
+        // then answer is false
+        // DO NOT MISS that we are starting with i = 1
+        for(int i = 1; i < sum+1; i++)
+            dp[0][i] = false;
+
+        
+        // code
+        // Fill the dp table in botton up manner
+        // DO NOT MISS that we are starting with i=1 and j=1 
+        for(int i = 1; i < N+1; i++)
+        {
+            for(int j = 1; j < sum+1; j++)
+            {
+                if(arr[i-1] <= j)
+                {
+                    dp[i][j] = dp[i-1][j] || dp[i-1][j-arr[i-1]];
+                }
+                else
+                {
+                    dp[i][j] = dp[i-1][j];
+                }
+                
+            }
+        }
+        
+        /*   // uncomment this code to print table
+        for (int i = 0; i <= n; i++)
+        {
+            for (int j = 0; j <= sum; j++)
+                printf ("%4d", dp[i][j]);
+            printf("\n");
+        }*/
+        return dp[N][sum];
+    }
+};
+```
 
