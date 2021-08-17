@@ -121,3 +121,22 @@ int knapSack(int wt[], int val[],int W, int n)
 1. Number Of Subset Sum given difference
 
 
+## 1. Subset Sum
+Given a set of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.
+Example:
+
+Input:  set[] = {3, 34, 4, 12, 5, 2}, sum = 9
+Output:  True  //There is a subset (4, 5) with sum 9.
+
+PROBLEM STATEMENT LINK:https://www.geeksforgeeks.org/subset-...
+
+Youtueb Video Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
+
+
+### Solution (Tabular) :
+1. Problem Statement - DONE
+2. Similarity
+3. Code Variation
+   1. Initialization
+   2. Code
+
