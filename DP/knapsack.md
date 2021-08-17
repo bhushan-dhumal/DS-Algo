@@ -135,7 +135,9 @@ Youtueb Video Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
 
 ### Solution (Tabular) :
 1. Problem Statement - DONE
-2. Similarity
+2. Similarity - 
+In knapsack we have two arrays w[] and val[] array but they are ultimately represent one array which is item array here we have item array as arr[] and W which is total weight in knapsack problem here it represent as sum, and n is size of item array.
+We can take knapsack code and igonore value array in it to get below code.
 3. Code Variation
    1. Initialization
    2. Code
@@ -145,7 +147,7 @@ public:
     bool isSubsetSum(int N, int arr[], int sum){
         bool dp[N+1][sum+1];
         
-        // initialization
+        // 1. Initialization
         // If sum is 0, then answer is true
         for(int i = 0; i < N+1; i++)
             dp[i][0] = true;
@@ -156,7 +158,7 @@ public:
             dp[0][i] = false;
 
         
-        // code
+        // 2. Code
         // Fill the dp table in botton up manner
         // DO NOT MISS that we are starting with i=1 and j=1 
         for(int i = 1; i < N+1; i++)
@@ -186,4 +188,70 @@ public:
     }
 };
 ```
+
+## 2. Equal Sum Partition
+
+Partition problem is to determine whether a given set can be partitioned into two subsets such that the sum of elements in both subsets is same.
+Examples:
+
+arr[] = {1, 5, 11, 5}
+Output: true 
+The array can be partitioned as {1, 5, 5} and {11}
+
+GFG LINK:https://www.geeksforgeeks.org/partiti...
+LC LINK : https://leetcode.com/problems/partition-equal-subset-sum/
+YT Explaination Link : https://www.youtube.com/watch?v=UmMh7xp07kY&t=5s
+
+### Solution (Tabular/Bottom up DP approch) :
+Flow
+1. Problem statment
+2. Similarity to Subset Sum : this problem is asking to find if sum(which is half of the total) is possible or not. so it is nothing but *subset sum* problem where sum is half of the total.
+3. Odd/Even Significance : total of array should be even number then only we can array in equal partition i.e. if total of array is not even then we can directly return false.
+4. Code Variation 
+
+``` c++
+class Solution{
+public:
+    int equalPartition(int N, int arr[])
+    {
+        // code here
+        int total = 0;
+        for(int i = 0; i < N;i++)
+            total+=arr[i];
+        if(total%2 == 1)
+            return 0;
+        int sum = total/2;
+        int dp[N+1][sum+1];
+        
+        // initialize top row as true
+        for(int i =0; i < N+1;i++)
+            dp[i][0] = 1;
+        
+        // initialize leftmost column,
+        // except part[0][0], as 0
+        for(int i = 1; i < sum+1; i++)
+            dp[0][i] = 0;
+        // Fill the partition table in bottom up manner
+        for(int i = 1; i < N+1;i++)
+        {
+            for(int j = 1; j <sum+1;j++)
+            {
+                if(arr[i-1] > j)
+                    dp[i][j] = dp[i-1][j];
+                else
+                    dp[i][j] = (dp[i-1][j] || dp[i-1][j-arr[i-1]]);
+            }
+        }
+        // uncomment this code to print table
+        /*for (int i = 0; i <= N; i++)
+        {
+            for (int j = 0; j <= sum; j++)
+                printf ("%4d", dp[i][j]);
+            printf("\n");
+        }*/
+        return dp[N][sum];
+    }
+};
+```
+
 
