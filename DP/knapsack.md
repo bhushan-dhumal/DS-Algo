@@ -18,6 +18,7 @@
 1. Unbounded Knapsack( can be solved by DP approch)
 
 ## 0-1 Knapsack
+GFG LINK:https://www.geeksforgeeks.org/0-1-kna...
 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
 ``` C++
 #include <bits/stdc++.h> 
@@ -56,39 +57,47 @@ int knapSack(int wt[], int val[], int W, int n)
 ```
 ### DP(Memoization)
 ``` C++
-int knapSackRec(int wt[], int val[],int W, int n, int** dp) 
-{ 
-	if (n == 0 || W == 0) 
-		return 0; 
+    int knapSack(int W, int wt[], int val[], int n) 
+    { 
+        // Your code here
+        int** dp; 
+        dp = new int*[n+1]; 
+        for (int i = 0; i < n+1; i++) 
+            dp[i] = new int[W + 1]; 
+  
+        for (int i = 0; i < n+1; i++)
+            for(int j = 0; j< W+1;j++)
+                dp[i][j] = -1;
+        int ret =  knapSackRec(W,wt,val,n,dp);
+        /* // Uncomment below line to print dp
+        for (int i = 0; i < n+1; i++)
+        {
+            for(int j = 0; j< W+1;j++)
+            {
+                cout<<dp[i][j]<<" ";
+            }
+            cout<<endl;
+        }*/
+        return ret;
 
-	if (wt[n-1] <= W)
-	{
-	// you have choice to include item in knapsack(bag)
-		dp[n][W] = max(val[n-1] + knapSackRec(wt, val, W - wt[n-1], n - 1,dp), 
-			knapSackRec(wt, val,W, n - 1,dp));
-	}
-	else if(wt[n-1] > W)
-	{
-	// you do not have choice to include item in knapsack(bag)
-	    dp[n][W] = knapSackRec(wt, val, W, n - 1,dp); 
-	return dp[n][W];
-	}
-} 
-  
-int knapSack(int wt[], int val[],int W, int n) 
-{ 
-    int** dp; 
-    dp = new int*[n+1]; 
-  
-    for (int i = 0; i < n+1; i++) 
-        dp[i] = new int[W + 1]; 
-  
-    for (int i = 0; i < n+1; i++)
-        for(int j = 0; j< W+1;j++)
-            dp[i][j] = -1;
-  
-    return knapSackRec(wt, val,W, n, dp); 
-} 
+    }
+    
+    int knapSackRec(int W, int wt[], int val[], int n, int** dp) 
+    {
+        if (n == 0 || W == 0) 
+		return 0;
+	if(dp[n][W] != -1)
+		return dp[n][W];
+        if(wt[n-1] <= W)
+        {
+            dp[n][W] = max(knapSackRec(W,wt,val,n-1,dp),val[n-1]+knapSackRec(W-wt[n-1],wt,val,n-1,dp));
+        }
+        else
+        {
+            dp[n][W] = knapSackRec(W,wt,val,n-1,dp);
+        }
+        return dp[n][W];        
+    }
 ```
 
 ### DP(Tabular)
