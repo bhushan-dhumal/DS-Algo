@@ -253,5 +253,70 @@ public:
     }
 };
 ```
+## 3. Count of Subset Sum
 
+Count of subsets sum with a Given sum
+Given an array arr[] of length N and an integer X, the task is to find the number of subsets with sum equal to X.
+Example:
 
+Input: arr[] = {1, 2, 3, 3}, X = 6
+Output: 3
+All the possible subsets are {1, 2, 3},
+{1, 2, 3} and {3, 3}
+
+GFG LINK:https://www.geeksforgeeks.org/count-o...
+YT LINK: https://www.youtube.com/watch?v=F7wqWbqYn9g&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=9
+
+### Solution (Tabular/Bottom up DP approch) :
+it is similar to subset sum . only couple of changes.
+1. || changes to + because now we can not stop once we find the sum as we need count we need to continue searching for all counts.
+2. return type changes from bool to int
+
+Below solution is not tested. copied subset sum and did above two changes
+``` c++
+class Solution{   
+public:
+    int countSubsetSum(int N, int arr[], int sum){
+        int dp[N+1][sum+1];
+        
+        // 1. Initialization
+        // If sum is 0, then answer is true
+        for(int i = 0; i < N+1; i++)
+            dp[i][0] = 1;
+        // If sum is not 0 and set is empty,
+        // then answer is false
+        // DO NOT MISS that we are starting with i = 1
+        for(int i = 1; i < sum+1; i++)
+            dp[0][i] = 0;
+
+        
+        // 2. Code
+        // Fill the dp table in botton up manner
+        // DO NOT MISS that we are starting with i=1 and j=1 
+        for(int i = 1; i < N+1; i++)
+        {
+            for(int j = 1; j < sum+1; j++)
+            {
+                if(arr[i-1] <= j)
+                {
+                    dp[i][j] = dp[i-1][j] + dp[i-1][j-arr[i-1]];
+                }
+                else
+                {
+                    dp[i][j] = dp[i-1][j];
+                }
+                
+            }
+        }
+        
+        /*   // uncomment this code to print table
+        for (int i = 0; i <= n; i++)
+        {
+            for (int j = 0; j <= sum; j++)
+                printf ("%4d", dp[i][j]);
+            printf("\n");
+        }*/
+        return dp[N][sum];
+    }
+};
+```
