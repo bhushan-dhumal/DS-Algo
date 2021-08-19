@@ -346,11 +346,11 @@ Subset2 = {11}, sum of Subset2 = 11
 GFG :https://www.geeksforgeeks.org/partiti...  
 YT : https://www.youtube.com/watch?v=-GtpxG6l_Mc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=10
 ### Solution (Tabular/Bottom up DP approch) :
-lets divide given array into two partitions P1 and P2 whose sums are S1 and S2 resepectively.
-we need to find minimum difference between S1 and S2 i.e. S2-S1 or S1-S2
-to get absolute difference we will pick S1 smaller than S2 so our solution is S2-S1
-We can calculate total sum by adding all elments of array lets call it total which is S1+S2
-so now we need to find total-S1-S1 (since S2 = total-S1) i.e. total - (2 * S1)
-our S1 and S2 both lie between 0 to total. for given example total is 23 so s1 and s2 are between 0 to 23
-and as S1 is smaller than S2, S1 can lie between 0 to total/2 so that S2 will be from other half(total/2 to total) . for given example S1 lie between 0 to 11
-To find S1,we can call subset sum method for total/2 and from last row of dp array we can find S1 for which difference is minimum.
+- lets divide given array into two partitions P1 and P2 whose sums are S1 and S2 resepectively.
+- we need to find minimum difference between S1 and S2 i.e. S2-S1 or S1-S2
+  to get absolute difference we will pick S1 smaller than S2 so our solution is S2-S1
+- We can calculate total sum by adding all elments of array lets call it total which is S1+S2
+  so now we need to find total-S1-S1 (since S2 = total-S1) i.e. total - (2 * S1)
+- our S1 and S2 both lie between 0 to total. for given example total is 23 so s1 and s2 are between 0 to 23
+  and as S1 is smaller than S2, S1 can lie between 0 to total/2 so that S2 will be from other half(total/2 to total) . for given example S1 lie between 0 to 11
+- To find S1,we can call subset sum method for total/2 and from last row of dp array we can find S1 for which difference is minimum.
