@@ -127,8 +127,9 @@ int knapSack(int wt[], int val[],int W, int n)
 1. Equal Sum Partition
 1. Count of Subset Sum
 1. Minimum Subset Sum Difference
-1. Target Sum(LeetCode)
 1. Number Of Subset Sum given difference
+1. Target Sum(LeetCode)
+
 
 
 ## 1. Subset Sum
@@ -348,6 +349,7 @@ Subset1 = {1, 5, 6}, sum of Subset1 = 12
 Subset2 = {11}, sum of Subset2 = 11 
 
 GFG :https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/
+GFGP : https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1
 
 YT : https://www.youtube.com/watch?v=-GtpxG6l_Mc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=10
 ### Solution (Tabular/Bottom up DP approch) :
@@ -359,3 +361,180 @@ YT : https://www.youtube.com/watch?v=-GtpxG6l_Mc&list=PL_z_8CaSLPWekqhdCPmFohncH
 - our S1 and S2 both lie between 0 to total. for given example total is 23 so s1 and s2 are between 0 to 23
   and as S1 is smaller than S2, S1 can lie between 0 to total/2 so that S2 will be from other half(total/2 to total) . for given example S1 lie between 0 to 11
 - To find S1,we can call subset sum method for total/2 and from last row of dp array we can find S1 for which difference is minimum.
+
+Below is own attempt by seeing video. can be optimised to single dp array.
+``` c++
+class Solution{
+
+  public:
+	int minDifference(int arr[], int n)  { 
+	    // Your code goes here
+	    int total =0;
+	    for(int i =0; i<n;i++)
+	        total+=arr[i];
+	    int sum1 = total/2;
+	    int dp[n+1][sum1+1];
+	    for(int i =0;i<n+1;i++)
+	        dp[i][0] = 1;
+	    for(int i =1; i <sum1+1;i++)
+	        dp[0][i] = 0;
+	    for(int i=1; i<n+1; i++)
+	    {
+	        for(int j=1; j<sum1+1;j++)
+	        {
+	            if(arr[i-1] <= j)
+	            {
+	                dp[i][j] = max(dp[i-1][j], dp[i-1][j-arr[i-1]]);
+	            }
+	            else
+	            {
+	                dp[i][j] = dp[i-1][j];
+	            }
+	        }
+	    }
+	   // for(int i=0; i<n+1; i++)
+	   // {
+	   //     for(int j=0; j<sum1+1;j++)
+	   //     {
+	   //         cout<<dp[i][j]<<" ";
+	   //     }
+	   //     cout<<endl;
+	   // }
+	    int i;
+	    for(i = sum1; i >=0; i--)
+	    {
+	        if(dp[n][i])
+	            break;
+	    }
+
+	    return total-2*i;
+	    
+	} 
+};
+
+```
+
+### 5.Number Of Subset Sum given difference
+Given a set of integers, the task is to divide it into two sets S1 and S2 such that the absolute difference between their sums is equal to X.
+If there is a set S with n elements, then if we assume Subset1 has m elements, Subset2 must have n-m elements and the value of abs(sum(Subset1) – sum(Subset2)) should be X.
+Count the number of subset with a given difference
+
+Example:
+
+Input: arr[] = {1, ,1, 2, 3}, X = 1
+Output: 3
+All the possible subsets are 
+{1, 3} and {1,2}
+{1, 1, 2} and {3}
+{1, 3} and {1,2} // as there are two 1's in given array.
+
+Could not find this problem on gfg or lc.
+YT Link : https://www.youtube.com/watch?v=ot_XBHyqpFc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=11
+
+### Solution (Tabular/Bottom up DP approch) :
+as we need to find total count of how many two subsets s1 and s2 are possible for whose difference is X
+total of array can be calculated by adding all elments.
+
+s1 - s2 = X 	...(1)
+s1 + s2 = total	...(2)
+
+By adding (1) and (2) equation we get 2 * s1 = X + total i.e. s1 = (X+total)/2
+so now we know the value of s1 hence given problem is nothing but *Count of subsets sum with a Given sum*
+
+## Target Sum
+Target Sum Problem
+Given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols + and -. For each integer, you should choose one from + and - as its new symbol.
+
+Find out how many ways to assign symbols to make sum of integers equal to target S.
+
+Example 1:
+Input: nums is [1, 1, 1, 1, 1], S is 3. 
+Output: 5
+Explanation: 
+
+-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+
+There are 5 ways to assign symbols to make the sum of nums be target 3.
+
+
+LC LINK:https://leetcode.com/problems/target-sum/
+YT LINK : https://www.youtube.com/watch?v=Hw6Ygp3JBYw&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=12
+### Solution
+- This problem is similar to previous problem **Number Of Subset Sum given difference**
+- Adding + or - to each element is like createing seperate subset s1 and s2 and then taking difference of that 
+- Consider below example explained in video
+arr = {1,1,2,3} sum = 1
+op = 3
+
+if we add + to 1,1,2 and - to 3 then we get sum 1 i.e. we created s1 with {1,1,2} and s2 with {3} and difference of s1 and s2 is 4-3 = 1
+
+``` c++
+class Solution {
+public:
+    int findTargetSumWays(vector<int>& nums, int target) 
+    {
+        int total =0;
+        int n = nums.size();
+        for(int i =0; i < n;i++)
+            total+=nums[i];
+        if((total+target)%2 != 0) // not sure but i think this check is required for partition problems
+            return 0;
+        int sum = (target+total)/ 2;
+        if(sum < 0) return 0; // added for last output
+        int dp[n+1][sum+1];
+        
+        for(int i =0; i<n+1;i++)
+            dp[i][0] = 1;
+        for(int i =1; i<sum+1;i++)
+            dp[0][i] = 0;
+        for(int i =1; i <n+1;i++)
+        {
+            for(int j =0;j<sum+1;j++) // changed starting point to 0 to handle input array having 0 i.e to consider scenarios where sum can be 0
+            {
+                if(nums[i-1] <= j)
+                {
+                    dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i-1]];
+                }
+                else
+                {
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+
+        return dp[n][sum];
+        
+    }
+};
+/*
+Below output needs to be handled
+[1,1,1,1,1]
+3
+
+[1]
+2
+
+[1000]
+1000
+
+[1000]
+-1000
+
+[0,0,0,0,0,0,0,0,1]
+1
+
+[1,2,1]
+0
+
+[0,38,42,31,13,10,11,12,44,16,38,17,22,28,9,27,20,35,34,39]
+2
+
+[100]
+-200
+*/
+
+```
