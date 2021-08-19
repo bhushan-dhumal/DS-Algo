@@ -19,6 +19,7 @@
 
 ## 0-1 Knapsack
 GFG LINK:https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
+
 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
 ``` C++
 #include <bits/stdc++.h> 
@@ -137,9 +138,9 @@ Example:
 Input:  set[] = {3, 34, 4, 12, 5, 2}, sum = 9
 Output:  True  //There is a subset (4, 5) with sum 9.
 
-PROBLEM STATEMENT LINK:https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
+GFGLINK:https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 
-Youtueb Video Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
+YT Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
 
 
 ### Solution (Tabular) :
