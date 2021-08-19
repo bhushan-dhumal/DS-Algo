@@ -414,7 +414,7 @@ class Solution{
 
 ```
 
-### 5.Number Of Subset Sum given difference
+## 5.Number Of Subset Sum given difference
 Given a set of integers, the task is to divide it into two sets S1 and S2 such that the absolute difference between their sums is equal to X.
 If there is a set S with n elements, then if we assume Subset1 has m elements, Subset2 must have n-m elements and the value of abs(sum(Subset1) – sum(Subset2)) should be X.
 Count the number of subset with a given difference
@@ -441,7 +441,7 @@ s1 + s2 = total	...(2)
 By adding (1) and (2) equation we get 2 * s1 = X + total i.e. s1 = (X+total)/2
 so now we know the value of s1 hence given problem is nothing but *Count of subsets sum with a Given sum*
 
-## Target Sum
+## 6 Target Sum
 Target Sum Problem
 Given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols + and -. For each integer, you should choose one from + and - as its new symbol.
 
