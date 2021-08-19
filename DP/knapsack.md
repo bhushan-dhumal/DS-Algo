@@ -18,7 +18,7 @@
 1. Unbounded Knapsack( can be solved by DP approch)
 
 ## 0-1 Knapsack
-GFG LINK:https://www.geeksforgeeks.org/0-1-kna...
+GFG LINK:https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
 ``` C++
 #include <bits/stdc++.h> 
@@ -137,7 +137,7 @@ Example:
 Input:  set[] = {3, 34, 4, 12, 5, 2}, sum = 9
 Output:  True  //There is a subset (4, 5) with sum 9.
 
-PROBLEM STATEMENT LINK:https://www.geeksforgeeks.org/subset-...
+PROBLEM STATEMENT LINK:https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 
 Youtueb Video Link : https://www.youtube.com/watch?v=_gPcYovP7wc&t=4s
 
@@ -207,7 +207,7 @@ arr[] = {1, 5, 11, 5}
 Output: true 
 The array can be partitioned as {1, 5, 5} and {11}
 
-GFG LINK:https://www.geeksforgeeks.org/partiti...
+GFG LINK:https://www.geeksforgeeks.org/partition-problem-dp-18/
 LC LINK : https://leetcode.com/problems/partition-equal-subset-sum/
 YT Explaination Link : https://www.youtube.com/watch?v=UmMh7xp07kY&t=5s
 
@@ -273,7 +273,7 @@ Output: 3
 All the possible subsets are {1, 2, 3},
 {1, 2, 3} and {3, 3}
 
-GFG LINK:https://www.geeksforgeeks.org/count-o...
+GFG LINK:https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/
 YT LINK: https://www.youtube.com/watch?v=F7wqWbqYn9g&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=9
 
 ### Solution (Tabular/Bottom up DP approch) :
@@ -343,7 +343,7 @@ Explanation:
 Subset1 = {1, 5, 6}, sum of Subset1 = 12 
 Subset2 = {11}, sum of Subset2 = 11 
 
-GFG :https://www.geeksforgeeks.org/partiti...  
+GFG :https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/
 YT : https://www.youtube.com/watch?v=-GtpxG6l_Mc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=10
 ### Solution (Tabular/Bottom up DP approch) :
 - lets divide given array into two partitions P1 and P2 whose sums are S1 and S2 resepectively.
