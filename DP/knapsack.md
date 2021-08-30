@@ -280,6 +280,7 @@ All the possible subsets are {1, 2, 3},
 GFG LINK:https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/
 
 YT LINK: https://www.youtube.com/watch?v=F7wqWbqYn9g&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=9
+LC LINK : https://leetcode.com/problems/subarray-sum-equals-k/
 
 ### Solution (Tabular/Bottom up DP approch) :
 it is similar to subset sum . only couple of changes.
