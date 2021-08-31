@@ -75,11 +75,13 @@ if length of the rod is 8 and the values of different pieces are given as follow
 
 
 length   | 1   2   3   4   5   6   7   8  
---------------------------------------------
 price    | 1   5   8   9  10  17  17  20
 
 GFG Link : https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
-GFG Practice : https://practice.geeksforgeeks.org/problems/cutted-segments1642/1
 
 ### Soultion
 Variation of unbounded knapsack
+
+### Similar problem like rod cutting :
+GFG Link : https://www.geeksforgeeks.org/maximize-the-number-of-segments-of-length-p-q-and-r/ 
+GFG Practice : https://practice.geeksforgeeks.org/problems/cutted-segments1642/1
