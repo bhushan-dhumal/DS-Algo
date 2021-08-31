@@ -80,8 +80,54 @@ price    | 1   5   8   9  10  17  17  20
 GFG Link : https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
 
 ### Soultion
-Variation of unbounded knapsack
+Variation of unbounded knapsack.
+Replace weight to length, value to price
+
+Few scenarios might not run. found few comments about it like - 
+0-1/Fractional/Unbounded knapsack could be filled without reaching the capacity, but in rod cutting you need to reach the capacity (total length). 
+``` c++
+#include <iostream>
+using namespace std;
+
+int knapSack(int N, int W, int val[], int wt[])
+{
+    // code here
+    int dp[N+1][W+1];
+    for(int i = 0; i< N+1;i++)
+    {
+        for(int j = 0; j <W+1 ;j++)
+        {
+            if( i==0 || j ==0)
+                dp[i][j] = 0;
+            else if(wt[i-1] <= j)
+                dp[i][j] = max(dp[i-1][j], val[i-1]+dp[i][j-wt[i-1]]);
+            else
+                dp[i][j] = dp[i-1][j];
+        }
+    }
+    return dp[N][W];
+}
+
+/* Driver program to
+test above functions */
+int main()
+{
+	int price[] = { 1, 5, 8, 9, 10, 17, 17, 20 };
+	int n = sizeof(price) / sizeof(price[0]);
+	int length[n];
+	for (int i = 0; i < n; i++) {
+		length[i] = i + 1;
+	}
+	int Max_len = n;
+
+	// Function Call
+	cout << "Maximum obtained value is "
+		<< knapSack(n,Max_len,price,length) << endl;
+}
+```
 
 ### Similar problem like rod cutting :
 GFG Link : https://www.geeksforgeeks.org/maximize-the-number-of-segments-of-length-p-q-and-r/ 
 GFG Practice : https://practice.geeksforgeeks.org/problems/cutted-segments1642/1
+
+## 1. Coin Change 1
