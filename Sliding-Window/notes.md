@@ -63,3 +63,6 @@ while(j < size)
   }
 }
 ```
+### Longest Substring With K Unique Characters
+https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1#
+
