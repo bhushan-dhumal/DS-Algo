@@ -1,5 +1,4 @@
 # DataStructure and Algorithms
-Data Structures and Algorithms
+Own notes of Data Structures and Algorithms
 
-Interview Experience
 
