@@ -9,9 +9,18 @@ Own notes of Data Structures and Algorithms
 - Searching
   - Linear Search
   - Binary Search
-- Stack and Queue
+- Stack
+- Queue
+- LinkList
+- Map
+  - Unorderd Map
+  - Ordered Map
+- Set
 - Trees
+  - Binary Search Tree
+  - BFS and DFS  
 - Graphs
+  - BFS and DFS
 
 ## Algorithms
 Greedy Alogrithms
