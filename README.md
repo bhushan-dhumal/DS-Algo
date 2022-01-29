@@ -1,14 +1,7 @@
 # DataStructure and Algorithms
 Own notes of Data Structures and Algorithms
 
-## Data Structures
-- Sorting 
-  - Selection sort
-  - Bubble Sort
-  - Insertion Sort
-- Searching
-  - Linear Search
-  - Binary Search
+## Data Structures( w.r.t C++)
 - Stack
 - Queue
 - LinkList
@@ -23,8 +16,17 @@ Own notes of Data Structures and Algorithms
   - BFS and DFS
 
 ## Algorithms
-Greedy Alogrithms
-Dynamic Programming
+- Sorting 
+  - Selection sort
+  - Bubble Sort
+  - Insertion Sort
+  - Merge Sort
+  - Quick Sort
+- Searching
+  - Linear Search
+  - Binary Search
+- Greedy Alogrithms
+- Dynamic Programming
 
 
 
