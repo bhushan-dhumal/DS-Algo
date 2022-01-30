@@ -27,6 +27,10 @@ Own notes of Data Structures and Algorithms
   - Binary Search
 - Greedy Alogrithms
 - Dynamic Programming
+  - Knapsack
+  - Unbounded Knapsack
+  - LCS
+  - MCM
 
 
 
