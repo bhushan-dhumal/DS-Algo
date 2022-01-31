@@ -25,6 +25,7 @@ Own notes of Data Structures and Algorithms
 - Searching
   - Linear Search
   - Binary Search
+- Recursion
 - Greedy Alogrithms
 - Dynamic Programming
   - Knapsack
