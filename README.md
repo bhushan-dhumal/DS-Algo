@@ -9,6 +9,8 @@ Own notes of Data Structures and Algorithms
   - Unorderd Map
   - Ordered Map
 - Set
+  - Unordered Set
+  - Ordered Set
 - Trees
   - Binary Search Tree
   - BFS and DFS  
