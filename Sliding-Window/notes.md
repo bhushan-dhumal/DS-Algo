@@ -64,9 +64,9 @@ while(j < size)
 }
 ```
 ### Longest Substring With K Unique Characters
-https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1#
+[gfg](https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1#)
 
 
-Leetcode link : https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/Sliding-Window-algorithm-template-to-solve-all-the-Leetcode-substring-search-problem.
+[LC](https://leetcode.com/problems/find-all-anagrams-in-a-string/discuss/92007/Sliding-Window-algorithm-template-to-solve-all-the-Leetcode-substring-search-problem)
 (This link is not related to above logic(which is taken from youtube dp playlist) . Read and understand the link content)
 
