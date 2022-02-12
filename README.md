@@ -2,7 +2,7 @@
 Own notes of Data Structures and Algorithms
 
 ## Data Structures( w.r.t C++)
-- Stack
+- Stack(LIFO)
 - Queue
 - LinkList
 - Map
@@ -16,6 +16,7 @@ Own notes of Data Structures and Algorithms
   - BFS and DFS  
 - Graphs
   - BFS and DFS
+- Heap
 
 ## Algorithms
 - Sorting 
