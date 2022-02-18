@@ -35,6 +35,7 @@ Own notes of Data Structures and Algorithms
   - Unbounded Knapsack
   - LCS
   - MCM
+- Bit Manipulation
 
 
 
