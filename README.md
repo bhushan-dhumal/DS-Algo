@@ -17,6 +17,7 @@ Own notes of Data Structures and Algorithms
 - Graphs
   - BFS and DFS
 - Heap
+- Priority Queue
 
 ## Algorithms
 - Sorting 
