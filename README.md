@@ -3,7 +3,7 @@ Own notes of Data Structures and Algorithms
 
 ## Data Structures( w.r.t C++)
 - Stack(LIFO)
-- Queue
+- Queue(FIFO)
 - LinkList
 - Map
   - Unorderd Map
