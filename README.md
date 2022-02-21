@@ -38,6 +38,10 @@ Own notes of Data Structures and Algorithms
   - MCM
 - Bit Manipulation
 
+## Algorithms (used to solve specific problems)
+
+- Boyer-Moore Voting Algorithm [majority-element](https://leetcode.com/problems/majority-element/)
+
 
 
 
