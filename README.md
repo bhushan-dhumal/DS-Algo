@@ -15,6 +15,7 @@ Own notes of Data Structures and Algorithms
   - Binary Search Tree
   - BFS and DFS  
 - Graphs
+  - Graph representations   
   - BFS and DFS
 - Heap
 - Priority Queue
