@@ -37,7 +37,7 @@ Own notes of Data Structures and Algorithms
   - Unbounded Knapsack
   - LCS
   - MCM
-  - sliding window
+  - Sliding Window
 - Bit Manipulation
 
 ## Algorithms (used to solve specific problems)
