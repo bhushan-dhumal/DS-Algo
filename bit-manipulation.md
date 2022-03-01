@@ -125,7 +125,22 @@ int updateBit(int n , int pos, int value)
     n = n & mask;
     return (n | (value<<pos));
 }
-
+```
+# Count number of 1's in for given number
+```
+Explanation:
+0 --> 0 --> 0
+1 --> 1 --> 1
+2 --> 10 --> 1
+3 --> 11 --> 2
+4 --> 100 --> 1
+5 --> 101 --> 2
+```
+``` c++
+int countNumberofOnes(int n)
+{
+   return (n&n-1)+1;
+}
 ```
 
 
