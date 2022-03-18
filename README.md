@@ -2,6 +2,7 @@
 Own notes of Data Structures and Algorithms
 
 ## Data Structures( w.r.t C++)
+- Arrays
 - Stack(LIFO)
 - Queue(FIFO)
 - LinkList
@@ -12,13 +13,17 @@ Own notes of Data Structures and Algorithms
   - Unordered Set
   - Ordered Set
 - Trees
+  - Binary Trees  
   - Binary Search Tree
+  - Heap
   - BFS and DFS  
 - Graphs
   - Graph representations   
   - BFS and DFS
 - Heap
 - Priority Queue
+- Union Find Data Structure
+- Minimum spanning tree
 
 ## Algorithms
 - Sorting 
@@ -30,7 +35,8 @@ Own notes of Data Structures and Algorithms
 - Searching
   - Linear Search
   - Binary Search
-- Recursion/Backtracking
+- Divide & Conquer 
+- Recursion & Backtracking
 - Greedy Alogrithms
 - Dynamic Programming
   - Knapsack
@@ -39,6 +45,7 @@ Own notes of Data Structures and Algorithms
   - MCM
   - Sliding Window
 - Bit Manipulation
+- String Algorithms (KMP)
 
 ## Algorithms (used to solve specific problems)
 
